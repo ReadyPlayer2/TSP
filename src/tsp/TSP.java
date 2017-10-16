@@ -21,12 +21,12 @@ public class TSP {
 	private static List<City> cities;
 
 	// Brute force (BF) variables
-	private static List<Route> BFRoutePerms = new ArrayList();
+	private static List<Route> BFRoutePerms = new ArrayList<Route>();
 	private static double BFcheapestCost = Double.MAX_VALUE;
 	private static Route BFcheapestRoute;
 
 	// Branch and bound (BaB) variables
-	private static List<Route> BaBRoutePerms = new ArrayList();
+	private static List<Route> BaBRoutePerms = new ArrayList<Route>();
 	private static double BaBcheapestCost = Double.MAX_VALUE;
 	private static Route BaBcheapestRoute;
 
@@ -83,7 +83,7 @@ public class TSP {
 		resetLists();
 
 		// Remove stoke from permutations as always start and end
-		List<Integer> cityNums = new ArrayList();
+		List<Integer> cityNums = new ArrayList<Integer>();
 		for (int i = 0; i < 9; i++) {
 			cityNums.add(i);
 		}
@@ -158,7 +158,7 @@ public class TSP {
 		resetLists();
 
 		// Remove stoke from permutations as always start and end
-		List<Integer> cityNums = new ArrayList();
+		List<Integer> cityNums = new ArrayList<Integer>();
 		for (int i = 0; i < 9; i++) {
 			cityNums.add(i);
 		}
@@ -177,10 +177,10 @@ public class TSP {
 	 * Resets lists to initial state to allow multiple runs of algorithms
 	 */
 	private static void resetLists() {
-		BFRoutePerms = new ArrayList();
-		BaBRoutePerms = new ArrayList();
+		BFRoutePerms = new ArrayList<Route>();
+		BaBRoutePerms = new ArrayList<Route>();
 
-		cities = new ArrayList();
+		cities = new ArrayList<City>();
 
 		// Populate City list
 		cities.add(new City("Birmingham", 0, false));
